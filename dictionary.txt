@@ -4,6 +4,8 @@
 "" double quotation
 '' single quotation
 / slash
+// double slash
+* astrix
 # hash
 $ dollar single
 . dot
