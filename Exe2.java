@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Exe2 {
     private String carName;
     private String model;
@@ -12,11 +14,25 @@ public class Exe2 {
     }
 
     public static void main(String[] args) {
-        Exe2 car1 = new Exe2("Honda CR-V", "2024", "Honda", 300000);
-        Exe2 car2 = new Exe2("Toyota Corolla", "2023", "Toyota", 250000);
-        Exe2 car3 = new Exe2("Ford Mustang", "2022", "Ford", 500000);
-        Double average = (car1.price + car2.price + car3.price) / 3;
-        System.out.println("The average price of the cars is: " + average);
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the number of cars: ");
+        int n = scan.nextInt();
+        double total = 0;
+        double average = 0;
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter the car name: ");
+            String carName = scan.next();
+            System.out.print("Enter the model: ");
+            String model = scan.next();
+            System.out.print("Enter the make: ");
+            String make = scan.next();
+            System.out.print("Enter the price: ");
+            double price = scan.nextDouble();
+            Exe2 car = new Exe2(carName, model, make, price);
+            total += price;
+        }
+        average = total / n;
+        System.out.println("The average price of the cars is: RM " + average);
     }
 
 
